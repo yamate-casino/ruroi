@@ -1,0 +1,94 @@
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial;
+    background-color: 		#ADE0EE;
+}
+.top1{
+    width:100vw;
+}
+.top1 img{
+    
+    width:20vw;
+    height:auto;
+    margin:0;
+    padding:0;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    margin-left:40vw;
+}
+.top1 h1{
+    width:100vw;
+    margin-top:2.5vh;
+    font-size:50px;
+    text-align:center;
+}
+.top1 .bt{
+    position:relative;
+    left:50%;
+    width: 80vw;
+    margin-left:-40vw;
+    padding:0;
+    
+    
+}
+.top1 input{
+    height:4.5vh;
+  width:80vw;
+  text-align: center;
+  margin:0;
+  padding:0;
+  
+  border:none;
+  outline:0;
+  border-top-right-radius: 100px;
+  border-top-left-radius: 100px;
+  font-size:25px;
+  background-color: white;
+}
+.top1 button{
+    height:4.5vh;
+    width:80vw;
+    text-align:center;
+  margin:0;
+  padding:0;
+  background-color: white;
+  border:none;
+  outline:none;
+  font-size:25px;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  background-color: white;
+}
+.body1 h3{
+    color:white;
+    font-size: 45px;
+    font-weight: 600;
+}
+.body1 img{
+    margin:0;
+    padding:0;
+    margin-left:15vw;
+    width:60vw;
+    height:auto;
+    background-color: white;
+}
+.dic{
+    position: relative;
+    left:10vw;
+    width:80vw;
+    background-color: white;
+    
+}
+.pic{
+    position: relative;
+    left:10vw;
+    width:80vw;
+    background-color: white;
+    
+}
+.outl{
+
+    
+    
+}
