@@ -92,3 +92,14 @@ body{
     
     
 }
+.musics{
+    position: absolute;
+    top:0;
+    width:100vw;
+    height:100vh;
+    opacity: 0;
+    background-color: white;
+}
+button{
+    color:black;
+}

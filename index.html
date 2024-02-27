@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
+
         <div class="top1">
             <img src="r3.png">
             <div class="bt">
@@ -13,7 +14,7 @@
              <button onclick="search()">けんさく</button>
             </div>
         </div>
-        <div class="body1">
+        <div class="body1" >
             <h3>ろいじてん</h3>
             <div class="dic" onclick="om2()">
                 
@@ -29,10 +30,40 @@
             <a href="picl.html">軽量版はこちら</a>
         </div>
         </div>
+        <div class="musics" id="musics"onclick="start()">
+    
+        </div>
         <script>
+            num = 0;
+            music = '';
+            function start(){
+                console.log("start");
+                num++;
+                if(num == 1){
+                    document.getElementById("musics").style.display="none";
+                    document.getElementById("musics").style.opacity = 0;                    
+                music = new Audio('chinp.mp3')
+                music.load();
+                music.play();
+                music.volume = 1.0;
+                }else{
+
+                }
+            }
             function om3(){
                 location.href="pic.html"
             }
+            function om2(){
+                location.href="dic.html"
+            }
+            function search(){
+                data = document.getElementById("text").value;
+                if(data == "マン凸ホームラン"){
+                    music.pause();
+                    document.getElementById("text").value = "";
+                }
+            }
+
         </script>
     </body>
 </html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>るろいじてん</title>
+        <link rel="stylesheet" href="dic.css">
+    </head>
+    <body onload="start()">
+        <div class="l"id="l">
+            <p id="ll">Loading</p>
+        </div>
+        <div class="else" id="else">
+        <img src="r3.png">
+        <h1>るろいじてん</h1>
+        <div class="box">
+<p onclick="aa()">あ</p>            
+<p onclick="kk()">か</p>
+<p onclick="ss()">さ</p>
+<p onclick="tt()">た</p>
+<p onclick="nn()">な</p>
+<p onclick="hh()">は</p>
+<p onclick="mm()">ま</p>
+<p onclick="yy()">や</p>
+<p onclick="rr()">ら</p>
+<p onclick="ww()">わ</p>            
+        </div>
+        <div class="bodys">
+            <h2 id="theme"></h2>
+            <div id="list2" class="list">
+                <div id="list"></div>
+                
+            </div>
+        </div>
+    </div>
+        <script>
+function start(){
+    
+    url = "https://script.google.com/macros/s/AKfycbxBpYYGDKoT_seVEvk7N8BSiWAWQg-XXHwugJrpx7O83z_apYkN5tKw6cWJBCsw85c/exec";
+    a =[];
+    k = [];
+    s = [];
+    t = [];
+    n = [];
+    h = [];
+    m = [];
+    y = [];
+    r = [];
+    w = [];
+    number = [];
+    fetch(url,{
+        "method":"GET",
+        "mode":"cors"
+    })
+    .then(response => {
+     if(response.ok){
+        return response.json();
+     }
+    })
+    .then(resJson =>{
+        document.getElementById("l").style.opacity = 0;
+        document.getElementById("else").style.opacity = 1;
+       var last = resJson.length;
+       console.log(last)
+       for(var num=0; num<=last; num++){
+        var text = resJson[num];
+        if(text == "あ"){
+          number.push(num);
+        }else if(text == "か"){
+            number.push(num);
+        }else if(text == "さ"){
+            number.push(num);
+}else if(text == "た"){
+    number.push(num);
+}else if(text == "な"){
+    number.push(num);
+}else if(text == "は"){
+    number.push(num);
+}else if(text == "ま"){
+    number.push(num);
+}else if(text == "や"){
+    number.push(num);
+}else if(text == "ら"){
+    number.push(num);
+}else if(text == "わ"){
+    number.push(num);
+}
+       }
+       console.log(number);
+       c_last = number.lenght;
+       //あ段
+       for(var num2 = number[0]; num2<=number[1]; num2++){
+        a.push(resJson[num2]);
+       }
+       for(var num2 = number[1]; num2<=number[2]; num2++){
+        k.push(resJson[num2]);
+       }
+       for(var num2 = number[2]; num2<=number[3]; num2++){
+        s.push(resJson[num2]);
+       }
+       for(var num2 = number[3]; num2<=number[4]; num2++){
+        t.push(resJson[num2]);
+       }
+       for(var num2 = number[4]; num2<=number[5]; num2++){
+        n.push(resJson[num2]);
+       }
+       for(var num2 = number[5]; num2<=number[6]; num2++){
+        h.push(resJson[num2]);
+       }
+       for(var num2 = number[6]; num2<=number[7]; num2++){
+        m.push(resJson[num2]);
+       }
+       for(var num2 = number[7]; num2<=number[8]; num2++){
+        y.push(resJson[num2]);
+       }
+       for(var num2 = number[8]; num2<=number[9]; num2++){
+        r.push(resJson[num2]);
+       }
+       for(var num2 = number[9]; num2<=number[10]; num2++){
+        w.push(resJson[num2]);
+       }
+       console.log(a);
+       console.log(k);
+       console.log(s);
+       console.log(t);
+       console.log(n);
+       console.log(h);
+       console.log(m);
+       console.log(y);
+       console.log(r);
+       console.log(w);
+    })
+}
+function aa(){
+    var last = a.length;
+    document.getElementById("theme").innerHTML = a[0];
+    document.getElementById("list").remove();
+    data = "<div id="+"\""+"list"+"\""+"></div>";
+    document.getElementById("list2").insertAdjacentHTML('beforeend',data);
+    for(var nn = 1; nn < last-1; nn++){
+        var data = "<p>"+a[nn]+"</p>";
+        document.getElementById("list").insertAdjacentHTML('beforeend',data);
+    }
+}
+function kk(){
+    var last = k.length;
+    document.getElementById("theme").innerHTML = k[0];
+    document.getElementById("list").remove();
+    data = "<div id="+"\""+"list"+"\""+"></div>";
+    document.getElementById("list2").insertAdjacentHTML('beforeend',data);
+    for(var nn = 1; nn < last-1; nn++){
+        var data = "<p>"+k[nn]+"</p>";
+        document.getElementById("list").insertAdjacentHTML('beforeend',data);
+    }
+}
+function tt(){
+    var last = t.length;
+    document.getElementById("theme").innerHTML = t[0];
+    document.getElementById("list").remove();
+    data = "<div id="+"\""+"list"+"\""+"></div>";
+    document.getElementById("list2").insertAdjacentHTML('beforeend',data);
+    for(var nn = 1; nn < last-1; nn++){
+        var data = "<p>"+t[nn]+"</p>";
+        document.getElementById("list").insertAdjacentHTML('beforeend',data);
+    }
+}
+function nn(){
+    var last = n.length;
+    document.getElementById("theme").innerHTML = n[0];
+    document.getElementById("list").remove();
+    data = "<div id="+"\""+"list"+"\""+"></div>";
+    document.getElementById("list2").insertAdjacentHTML('beforeend',data);
+    for(var nnn = 1; nnn < last-1; nnn++){
+        var data = "<p>"+n[nnn]+"</p>";
+        document.getElementById("list").insertAdjacentHTML('beforeend',data);
+    }
+}
+function hh(){
+    var last = h.length;
+    document.getElementById("theme").innerHTML = h[0];
+    document.getElementById("list").remove();
+    data = "<div id="+"\""+"list"+"\""+"></div>";
+    document.getElementById("list2").insertAdjacentHTML('beforeend',data);
+    for(var nn = 1; nn < last-1; nn++){
+        var data = "<p>"+h[nn]+"</p>";
+        document.getElementById("list").insertAdjacentHTML('beforeend',data);
+    }
+}
+function mm(){
+    var last = k.length;
+    document.getElementById("theme").innerHTML = m[0];
+    document.getElementById("list").remove();
+    data = "<div id="+"\""+"list"+"\""+"></div>";
+    document.getElementById("list2").insertAdjacentHTML('beforeend',data);
+    for(var nn = 1; nn < last-1; nn++){
+        var data = "<p>"+m[nn]+"</p>";
+        document.getElementById("list").insertAdjacentHTML('beforeend',data);
+    }
+}
+function yy(){
+    var last = y.length;
+    document.getElementById("theme").innerHTML = y[0];
+    document.getElementById("list").remove();
+    data = "<div id="+"\""+"list"+"\""+"></div>";
+    document.getElementById("list2").insertAdjacentHTML('beforeend',data);
+    for(var nn = 1; nn < last-1; nn++){
+        var data = "<p>"+y[nn]+"</p>";
+        document.getElementById("list").insertAdjacentHTML('beforeend',data);
+    }
+}
+function rr(){
+    var last = r.length;
+    document.getElementById("theme").innerHTML = r[0];
+    document.getElementById("list").remove();
+    data = "<div id="+"\""+"list"+"\""+"></div>";
+    document.getElementById("list2").insertAdjacentHTML('beforeend',data);
+    for(var nn = 1; nn < last-1; nn++){
+        var data = "<p>"+r[nn]+"</p>";
+        document.getElementById("list").insertAdjacentHTML('beforeend',data);
+    }
+}
+function ss(){
+    var last = s.length;
+    document.getElementById("theme").innerHTML = s[0];
+    document.getElementById("list").remove();
+    data = "<div id="+"\""+"list"+"\""+"></div>";
+    document.getElementById("list2").insertAdjacentHTML('beforeend',data);
+    for(var nn = 1; nn < last-1; nn++){
+        var data = "<p>"+s[nn]+"</p>";
+        document.getElementById("list").insertAdjacentHTML('beforeend',data);
+    }
+}
+function ww(){
+    var last = w.length;
+    document.getElementById("theme").innerHTML = w[0];
+    document.getElementById("list").remove();
+    data = "<div id="+"\""+"list"+"\""+"></div>";
+    document.getElementById("list2").insertAdjacentHTML('beforeend',data);
+    for(var nn = 1; nn < last-1; nn++){
+        var data = "<p>"+w[nn]+"</p>";
+        document.getElementById("list").insertAdjacentHTML('beforeend',data);
+    }
+}
+
+        </script>
+    </body>
+</html>
