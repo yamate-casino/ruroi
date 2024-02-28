@@ -43,6 +43,7 @@
         <script>
 function start(){
 var cookie_data = document.cookie;
+console.log(cookie_data);
 var lenght = cookie_data.indexOf("ruroi_data=");
 var lenght2 = cookie_data.indexOf("->");
 resJson = '';
@@ -58,14 +59,14 @@ url = "https://script.google.com/macros/s/AKfycbxBpYYGDKoT_seVEvk7N8BSiWAWQg-XXH
     r = [];
     w = [];
     number = [];
-    
-if(lenght != -1){
+    console.log(lenght);
+    console.log(lenght2);
+/*if(lenght != -1){
     console.log("Get Cookie Datas");
 resJson = cookie_data.substring(lenght+lenght.length,lenght2);
-resJson = JSON.parse(resJson);
 console.log(resJson);
 act();
-}else{
+}else{*/
     console.log("Loading Datas");
     fetch(url,{
         "method":"GET",
@@ -82,7 +83,7 @@ act();
         act();
     })
 }
-}
+//}
     function act(){
         console.log("Writing Datas");
         document.getElementById("l").style.opacity = 0;
