@@ -69,3 +69,44 @@ background-color: white;
 .else{
     opacity: 0;
 }
+.prize h3{
+ font-size:50px;
+ margin-left:2.5vw;
+}
+.prize .n1{
+    color:#E6C200  ;
+    
+}
+.prize .p1{
+    padding-top:2vh;
+    padding-bottom:2vh;
+    font-size:50px;
+    text-align: center;
+background-color: #E6C200;
+    box-shadow: 0 0 20px 1px 
+    #E6C200 ;
+}
+.prize .n2{
+    color:
+    #A7A7A7 ;
+}
+.prize .p2{
+    padding-top:2vh;
+    padding-bottom:2vh;
+    font-size:50px;
+    text-align: center;
+    background-color: #A7A7A7;
+    box-shadow:0 0 20px 1px 
+    #A7A7A7 ;
+}
+.prize .n3{
+    color:#9A5E21 ;
+}
+.prize .p3{
+    padding-top:2vh;
+    padding-bottom:2vh;
+    font-size:50px;
+    text-align: center;
+    background-color: #9A5E21 ;
+    box-shadow: 0 0 20px 1px #9A5E21 ;
+}

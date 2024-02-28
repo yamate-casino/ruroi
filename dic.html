@@ -25,6 +25,14 @@
 <p onclick="ww()">わ</p>            
         </div>
         <div class="bodys">
+            <div class="prize">
+                <h3 class="n1">金賞</h3>
+                <p class="p1">マン凸ホームラン</p>
+                <h3 class="n2">銀賞</h3>
+                <p class="p2">愛液と精子</p>
+                <h3 class="n3">銅賞</h3>
+                <p class="p3">ブレブレオチンポ</p>
+            </div>
             <h2 id="theme"></h2>
             <div id="list2" class="list">
                 <div id="list"></div>
@@ -34,8 +42,11 @@
     </div>
         <script>
 function start(){
-    
-    url = "https://script.google.com/macros/s/AKfycbxBpYYGDKoT_seVEvk7N8BSiWAWQg-XXHwugJrpx7O83z_apYkN5tKw6cWJBCsw85c/exec";
+var cookie_data = document.cookie;
+var lenght = cookie_data.indexOf("ruroi_data=");
+var lenght2 = cookie_data.indexOf("->");
+resJson = '';
+url = "https://script.google.com/macros/s/AKfycbxBpYYGDKoT_seVEvk7N8BSiWAWQg-XXHwugJrpx7O83z_apYkN5tKw6cWJBCsw85c/exec";
     a =[];
     k = [];
     s = [];
@@ -47,6 +58,14 @@ function start(){
     r = [];
     w = [];
     number = [];
+    
+if(lenght != -1){
+    console.log("Get Cookie Datas");
+resJson = cookie_data.substring(lenght+lenght.length,lenght2);
+console.log(resJson);
+act();
+}else{
+    console.log("Loading Datas");
     fetch(url,{
         "method":"GET",
         "mode":"cors"
@@ -56,7 +75,15 @@ function start(){
         return response.json();
      }
     })
-    .then(resJson =>{
+    .then(jsondata =>{
+        resJson = jsondata;
+        console.log(resJson);
+        act();
+    })
+}
+}
+    function act(){
+        console.log("Writing Datas");
         document.getElementById("l").style.opacity = 0;
         document.getElementById("else").style.opacity = 1;
        var last = resJson.length;
@@ -128,8 +155,8 @@ function start(){
        console.log(y);
        console.log(r);
        console.log(w);
-    })
-}
+    }
+
 function aa(){
     var last = a.length;
     document.getElementById("theme").innerHTML = a[0];

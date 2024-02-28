@@ -9,13 +9,13 @@ body{
 }
 .top1 img{
     
-    width:20vw;
+    width:40vw;
     height:auto;
     margin:0;
     padding:0;
     margin-top: 2.5vh;
     margin-bottom: 2.5vh;
-    margin-left:40vw;
+    margin-left:27.5vw;
 }
 .top1 h1{
     width:100vw;
@@ -61,6 +61,7 @@ body{
   background-color: white;
 }
 .body1 h3{
+    margin-left:2.5vw;
     color:white;
     font-size: 45px;
     font-weight: 600;
@@ -102,4 +103,53 @@ body{
 }
 button{
     color:black;
+}
+.todays{
+    
+    width:90vw;
+    height:20vh;
+    background-color: white;
+    border-radius:50px;
+    margin-left:5vw;
+}
+.todays h2{
+    position: relative;
+    left:2.5vw;
+    top:1vh;
+    font-size:60px;
+    font-family: serif;
+
+}
+.todays p{
+    text-align: center;
+    width:80vw;
+    margin-left: 5vw;
+    font-size:50px;
+    font-weight: 600;
+    font-family: serif;
+}
+.all{
+opacity: 1;
+display: block;
+width:100vw;
+height:100vh;
+}
+.all img{
+    position:absolute;
+    left:27.5vw;
+    top:35vh;
+    opacity: 1;
+    width:40vw;
+    height:auto;
+}
+.all .l1{
+    position: absolute;
+    top:45vh;
+    width: 100vw;
+    text-align: center;
+   font-size:30px
+}
+.all1{
+    opacity: 0;
+    display: none;
 }
