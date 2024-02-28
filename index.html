@@ -64,7 +64,7 @@
     .then(resJson =>{
         console.log("Load Succeed");
         todays = resJson;
-        datas = "ruroi_data="+resJson+"->";
+        datas = "ruroi_data="+JSON.stringify(resJson)+"->";
         console.log(datas);
       document.cookie = datas;
       get_data2();

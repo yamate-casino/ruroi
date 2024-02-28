@@ -62,6 +62,7 @@ url = "https://script.google.com/macros/s/AKfycbxBpYYGDKoT_seVEvk7N8BSiWAWQg-XXH
 if(lenght != -1){
     console.log("Get Cookie Datas");
 resJson = cookie_data.substring(lenght+lenght.length,lenght2);
+resJson = JSON.parse(resJson);
 console.log(resJson);
 act();
 }else{
