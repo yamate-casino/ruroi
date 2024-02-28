@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>るろい</title>
+        <link rel="stylesheet" href="indexc.css">
+    </head>
+    <body onload="get_data()">
+<div class="all" id="all">
+    <img id="imgs"src="r3.png">
+    <p class="l1">ろーどちゅー</p>
+</div>
+<div class="all1" id="all1">
+        <div class="top1">
+            <img src="r3.png">
+            <div class="bt">
+             <input type="text" id="text" value="" placeholder="きーわーどをけんさく">
+             <button onclick="search()">けんさく</button>
+            </div>
+        </div>
+        <div class="body1" >
+            <div class="todays">
+                <h2>今日の一句</h2>
+                <p id="today">でもまあちゃんは全肯定してあげるし、オムツ替えたり、一緒に履いたりしようね♡♡</p>
+            </div>
+            <h3>ろいじてん</h3>
+            <div class="dic" onclick="om2()">
+                
+                <img src="om3.png">
+            </div>
+            <h3>るろいしゃしんかん</h3>
+            <div class="outl">
+            <div class="pic" onclick="om3()"> 
+                
+                <img src="om2.jpg">
+                
+            </div>
+            <a href="picl.html">軽量版はこちら</a>
+        </div>
+        </div>
+        <div class="musics" id="musics"onclick="start()">
+    
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            num = 0;
+            music = '';
+            datas = '';
+            todyas = '';
+            function get_data(){
+                ani();
+                console.log("Loading START");
+                url = "https://script.google.com/macros/s/AKfycbxBpYYGDKoT_seVEvk7N8BSiWAWQg-XXHwugJrpx7O83z_apYkN5tKw6cWJBCsw85c/exec";
+                fetch(url,{
+        "method":"GET",
+        "mode":"cors"
+    })
+    .then(response => {
+     if(response.ok){
+        return response.json();
+     }
+    })
+    .then(resJson =>{
+        console.log("Load Succeed");
+        todays = resJson;
+        datas = "ruroi_data="+JSON.stringify(resJson)+"->";
+        console.log(datas);
+      document.cookie = datas;
+      get_data2();
+    })
+            }
+            function get_data2(){
+                console.log("Getting Number");
+                fetch('https://script.google.com/macros/s/AKfycbycg9aGaM3EEYKALXnKDtEPbvb9wPJ5ngBRPXjQ73AFPKAWypjSFz_br3Gs933qSJ8/exec',{
+                    "method":"get",
+                    "mode":"cors"
+                })
+                .then(response =>{
+                    if(response.ok){
+                        return response.json()
+                    }
+                })
+                .then(resJson =>{
+                    console.log("Got Number");
+                    number = resJson[0];
+                  document.getElementById("today").innerHTML = todays[number]
+                  stop();
+                })
+                .catch(error =>{
+                alert("Error");
+                console.log(error);
+                })
+            }
+            function start(){
+                console.log("start");
+                num++;
+                if(num == 1){
+                    document.getElementById("musics").style.display="none";
+                    document.getElementById("musics").style.opacity = 0;                    
+                music = new Audio('chinp.mp3')
+                music.load();
+                music.play();
+                music.volume = 1.0;
+                }else{
+
+                }
+            }
+            function om3(){
+                location.href="pic.html"
+            }
+            function om2(){
+                location.href="dic.html"
+            }
+            function search(){
+                data = document.getElementById("text").value;
+                if(data == "マン凸ホームラン"){
+                    music.pause();
+                    document.getElementById("text").value = "";
+                }
+            }
+            time = '';
+            function ani(){
+                time = setInterval(()=>{
+                    $("#imgs").animate({
+                    'opacity':0
+                },1000)
+                $("#imgs").animate({
+                    'opacity':1
+                },1000)
+                },2000)
+            }
+            function stop(){
+             clearInterval(time);
+             document.getElementById("all").style.display = "none";
+             document.getElementById("all").style.opacity = 0;
+             document.getElementById("all1").style.display = "block";
+             document.getElementById("all1").style.opacity = 1;
+            }
+        </script>
+    </body>
+</html>
