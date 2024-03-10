@@ -13,10 +13,25 @@
 <div class="all1" id="all1">
         <div class="top1">
             <img src="r3.png">
-            <div class="bt">
+            <div class="top_bar">
+                <div class="section1" onclick="sec1()">
+                    <p>とうろく</p>
+                    <img src="omu4.jpg">
+                </div>
+                <div class="section2" onclick="sec2()">
+                    <p>じょうほうていきょう</p>
+                    <img src="omu4.jpg">
+                </div>
+                <div class="section3" onclick="sec3()">
+                    <p>ごいけん</p>
+                    <img src="omu4.jpg">
+                </div>
+
+            </div>
+            <!--div class="bt">
              <input type="text" id="text" value="" placeholder="きーわーどをけんさく">
              <button onclick="search()">けんさく</button>
-            </div>
+            </div-->
         </div>
         <div class="body1" >
             <div class="todays">
@@ -139,6 +154,10 @@
              document.getElementById("all1").style.display = "block";
              document.getElementById("all1").style.opacity = 1;
             }
+            function sec1(){
+                location.href = "regi.html";
+            }
+
         </script>
     </body>
 </html>

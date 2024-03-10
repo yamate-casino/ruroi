@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>とうろく</title>
+    </head>
+    <body>
+        <h1>まいにちるろい</h1>
+        <p>このさーびすにとうろくするとまいにちるろいからのポエムがおくられてくるよ</p>
+        <input type="text" id="text" value="" placeholder="めーるあどれす">
+        <div class="regi" onclick="regi()">とうろく</div>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                font-family:Arial;
+    background-color: 		#ADE0EE;
+            }
+            h1{
+                width: 100vw;
+                margin-top: 10vh;
+                font-size:7.5vw;
+                text-align: center;
+            }
+            p{
+                width: 100vw;
+                font-size: 3.5vw;
+                text-align: center;
+            }
+            input{
+                width:75vw;
+                height:5vh;
+                font-size: 4vw;
+                margin-left:10vw;
+                background-color: #d8f2f9;
+                border: none;
+                outline: none;
+                padding-left:5vw;
+                color:#3a3c3c;
+                border-radius: 40px;            }
+            .regi{
+                width:30vw;
+                height:5vh;
+                font-size:3vw;
+                line-height: 5vh;
+                text-align: center;
+                border: 1px solid;
+                margin-left:35vw;
+                margin-top: 2.5vh;
+            }
+        </style>
+        <script>
+            function regi(){
+                var text = document.getElementById("text").value;
+                var url = "";
+                var data = [{
+                    "data1":text
+                }];
+                var params = {
+                    "method":"post",
+                    "mode":"no-cors",
+                    "Content-Type":"applicaton/son",
+                    "body":JSON.stringify(data)
+                }
+                fetch(url,params);
+                alert("とうろくかんりょう");
+                location.href="index.html";
+            }
+        </script>
+    </body>
+</html>
