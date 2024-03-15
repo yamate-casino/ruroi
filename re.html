@@ -55,7 +55,7 @@
         <script>
           function send(){
           var text = document.getElementById("text").value;
-          var url = "";
+          var url = "https://script.google.com/macros/s/AKfycbwPhdyC1u2WgmFaNmx2QI8UThkcPtl7o5X5ROTtrO9nXzoOu0to6g-l9MPGsCzCDMH6/exec";
           if(text.length == 0){
             alert("文字を入力してください");
             return;
@@ -71,7 +71,8 @@
             }
             fetch(url,params);
             alert("そうしんしました");
-            location.href="index.html"
+            location.href="index.html";
+            //cookie の処理
         }
           
         </script>
