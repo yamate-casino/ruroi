@@ -5,10 +5,10 @@
         <title>るろい</title>
         <link rel="stylesheet" href="index.css">
     </head>
-    <body onload="get_data()">
-<div class="all" id="all">
+    <body onload="get_data1()">
+<div class="all" id="all" onclick="get_data()">
     <img id="imgs"src="r3.png">
-    <p class="l1">ろーどちゅー</p>
+    <p class="l1" id="l1d">がめんたっぷしてろーど</p>
 </div>
 <div class="all1" id="all1">
         <div class="top1">
@@ -42,7 +42,7 @@
                 <h2 class="theme1" id="theme1">News</h2>
                 <div class="content">
                     <h3 id="theme2">るろい氏飲酒か</h3>
-                    <p id="script">
+                    <p id="scr＜ipt">
                         おむつ王子ことるろい氏の飲酒疑惑が情報提供によって浮上しまたした。
                         <a href="top_news.html">詳しく見る</a>
                     </p>
@@ -50,7 +50,29 @@
             </div-->
             <div class="newsr" >
                 <img src="bell.png"id="belll" class="belll" onclick="news()">
+                <div class="cont" id="cont">
+                    <div id="d1" class="d1">
+                    <small>NEWS</small>
+                   <p class="n1" id="n1">ニュース</p>
+                </div>
+                <div id="d2" class="d2">
+                    <div id="d3" class="d3" onclick="bt1()">
+                   <p class="n2" id="n2"onclick="bt1()">ルロイ氏飲酒か</p>
+                   <small onclick="bt1()">先日、内部告発により明らかになった事実、真相はいかに</small>
+                </div>
+                <div id="d3" class="d3" onclick="bt2()">
+                   <p class="n2" id="n2">ルロイ氏下腹部露出か</p>
+                   <small>昨年、国外において自らの下腹部を、いったいなぜ</small>
+                   </div>
+                   <div id="d3" class="d3" onclick="bt3()">
+                   <p class="n2" id="n2">ルロイ氏グーンのSBが好みか</p>
+                   <small>ルロイ氏のツイートより明らかになった衝撃の事実、それはいったい</small>
+                </div>
+                </div>
+                </div>
+                
             </div>
+            <div id="bar" class="bar"></div>
             <h3>ろいじてん</h3>
             <div class="dic" onclick="om2()">
                 
@@ -80,9 +102,10 @@
         
         <h3 class="qrh">きょうゆうできるよ</h3>
         <img class="qr"src="qr.png">
-        <div class="musics" id="musics"onclick="start()">
+        
+        <!--div class="musics" id="musics"onclick="start()">
     
-        </div>
+        </div-->
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script>
@@ -90,8 +113,35 @@
             music = '';
             datas = '';
             todyas = '';
+document.getElementById("bar").addEventListener('touchmove',logswipe);
+document.getElementById("bar").addEventListener('touchstart',logswipestart);
+document.getElementById("bar").addEventListener('touchend',logswipeend);
+            function logswipestart(event){
+  event.preventDefault();
+  startx = event.touches[0].pageX;
+}
+function logswipe(event){
+event.preventDefault();
+endx = event.touches[0].pageX;
+}
+function logswipeend(event){
+event.preventDefault();
+if(0 < endx-startx){
+  scroll_out();
+}else{
+  console.log("opsite")
+}
+}
+function get_data1(){
+    data = document.cookie;
+    var c1 = data.indexOf("status=");
+    if(c1 !=-1){
+      stop();
+    }
+}
             function get_data(){
                 ani();
+                start();
                 console.log("Loading START");
                 url = "https://script.google.com/macros/s/AKfycbxBpYYGDKoT_seVEvk7N8BSiWAWQg-XXHwugJrpx7O83z_apYkN5tKw6cWJBCsw85c/exec";
                 fetch(url,{
@@ -109,6 +159,7 @@
         datas = "ruroi_data="+JSON.stringify(resJson)+"->";
         console.log(datas);
       document.cookie = datas;
+      document.cookie = "status=ok*; max-age=1000000"
       get_data2();
     })
             }
@@ -141,8 +192,9 @@
                 console.log("start");
                 num++;
                 if(num == 1){
-                    document.getElementById("musics").style.display="none";
-                    document.getElementById("musics").style.opacity = 0;                    
+                      document.getElementById("l1d").innerHTML = "ろーどちゅー"
+                    //document.getElementById("musics").style.display="none";
+                    //document.getElementById("musics").style.opacity = 0;                    
                 music = new Audio('chinp.mp3')
                 music.load();
                 music.play();
@@ -208,7 +260,7 @@
                     $("#belll").css("transform","rotate("+count+"deg)")
                     count++;
                     }
-                },10)
+                },5)
             }
             function bell2(){
                 var branch = setInterval(()=>{
@@ -226,10 +278,58 @@
                         $("#belll").css("transform","rotate("+count+"deg)")
                         count--;
                     }
-                },10)
+                },5)
             }
             function news(){
-                location.href = "top_news.html";
+                //location.href = "top_news.html";
+                console.log('start')
+                $("#cont").animate({
+                    "right":'0',
+                    "width":0,
+                    "opacity":0
+                },{
+                    duration:0,
+                    easing:"linear"
+                })
+                $("#cont").animate({
+                    "right":'0',
+                    "width":'100vw',
+                    "opacity":1
+                },{
+                    duration:500,
+                    easing:"linear"
+                })
+               setTimeout(()=>{
+                document.getElementById("cont").style.display ="block";
+                document.getElementById("d3").style.display ="block";
+                document.getElementById("d2").style.display ="block";
+                document.getElementById("d1").style.display ="block";
+                document.getElementById("bar").style.display ="block";
+               },0)
+            }
+            function scroll_out(){
+                $("#cont").animate({
+                    
+                    "width":0,
+                    "opacity":0
+                },{
+                    duration:500,
+                    easing:"linear"
+                })
+               setTimeout(()=>{
+                document.getElementById("cont").style.display ="none";
+                document.getElementById("bar").style.display ="none";
+               },500)
+            }
+            function bt1(){
+                alert()
+                location.href="news1.html";
+            }
+            function bt2(){
+                location.href="news2.html";
+            }
+            function bt3(){
+                location.href="news3.html";
             }
         </script>
     </body>
