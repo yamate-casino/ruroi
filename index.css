@@ -278,6 +278,7 @@ height:100vh;
 .list{
     width:90vw;
     margin-left:5vw;
+    border-bottom: 1px solid white;
 }
 .list span{
     font-size:15px;
