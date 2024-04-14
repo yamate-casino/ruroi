@@ -286,3 +286,23 @@ height:100vh;
 .list p{
     font-size:25px;
 }
+.newsr{
+    position:absolute;
+    top:1vh;
+    right:15vw;
+    width:10vw;
+    height:auto;
+    margin:0;
+    padding:0;
+    
+}
+.newsr img{
+    width:10vw;
+    height:auto;
+    background-color: #ADE0EE;
+}
+#belll{
+
+    display:table-caption;
+    
+}

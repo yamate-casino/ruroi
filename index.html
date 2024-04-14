@@ -38,7 +38,7 @@
                 <h2>今日の一句</h2>
                 <p id="today">でもまあちゃんは全肯定してあげるし、オムツ替えたり、一緒に履いたりしようね♡♡</p>
             </div>
-            <div class="news">
+            <!--div class="news">
                 <h2 class="theme1" id="theme1">News</h2>
                 <div class="content">
                     <h3 id="theme2">るろい氏飲酒か</h3>
@@ -47,6 +47,9 @@
                         <a href="top_news.html">詳しく見る</a>
                     </p>
                 </div>
+            </div-->
+            <div class="newsr" >
+                <img src="bell.png"id="belll" class="belll" onclick="news()">
             </div>
             <h3>ろいじてん</h3>
             <div class="dic" onclick="om2()">
@@ -120,6 +123,9 @@
                     console.log("Got Number");
                     number = resJson[0];
                   document.getElementById("today").innerHTML = todays[number]
+                  //ニュースあれば
+                  bell();
+
                   stop();
                 })
                 .catch(error =>{
@@ -180,6 +186,46 @@
             }
             function sec3(){
                 location.href = "re.html";
+            }
+            count = 0;
+            master_count = 0;
+            function bell(){
+                master_count++;
+                if(master_count > 50){
+                  return
+                }
+                count = 0;
+                var branch = setInterval(()=>{
+                    if(count==5){
+                        clearInterval(branch);
+                        bell2();
+                        return;
+                    }else{
+                    $("#belll").css("transform","rotate("+count+"deg)")
+                    count++;
+                    }
+                },10)
+            }
+            function bell2(){
+                var branch = setInterval(()=>{
+                    if(count==-5){
+                        clearInterval(branch);
+                        bell();
+                        return;
+                    }else if(count > 0){
+                    $("#belll").css("transform","rotate("+count+"deg)")
+                    count--;
+                    }else if(count == 0){
+                        $("#belll").css("transform","scale(-1,1)")
+                        count--;
+                    }else if(count < 0 ){
+                        $("#belll").css("transform","rotate("+count+"deg)")
+                        count--;
+                    }
+                },10)
+            }
+            function news(){
+                location.href = "top_news.html";
             }
         </script>
     </body>
