@@ -36,7 +36,7 @@
         <div class="body1" >
             <div class="todays">
                 <h2>今日の一句</h2>
-                <p id="today">でもまあちゃんは全肯定してあげるし、オムツ替えたり、一緒に履いたりしようね♡♡</p>
+                <p id="today"></p>
             </div>
             <!--div class="news">
                 <h2 class="theme1" id="theme1">News</h2>
@@ -136,7 +136,20 @@ function get_data1(){
     data = document.cookie;
     var c1 = data.indexOf("status=");
     if(c1 !=-1){
+        var c2 = data.indexOf("todaysp=");
+        if(c2 !=-1){
+            var c3 = data.indexOf("¥",c2);
+            c2 = pserInt(c2)+8;
+            var tp = data.substring(c2,c3);
+            document.getElementById("today").innerHTML = tp;
+        }else{
+            console.log("cookie<todays>Error");
+        }
+        
       stop();
+        
+    }else{
+        console.log("Cookie<None Datas>")
     }
 }
             function get_data(){
@@ -163,6 +176,7 @@ function get_data1(){
       get_data2();
     })
             }
+            todays_p = "";
             function get_data2(){
                 console.log("Getting Number");
                 fetch('https://script.google.com/macros/s/AKfycbycg9aGaM3EEYKALXnKDtEPbvb9wPJ5ngBRPXjQ73AFPKAWypjSFz_br3Gs933qSJ8/exec',{
@@ -177,6 +191,9 @@ function get_data1(){
                 .then(resJson =>{
                     console.log("Got Number");
                     number = resJson[0];
+                    todays_p = todays[number];
+                    todays_pc = "todaysp="+todays_p+"¥";
+                    document.cookie = todays_pc;
                   document.getElementById("today").innerHTML = todays[number]
                   //ニュースあれば
                   bell();
