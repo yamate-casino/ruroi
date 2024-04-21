@@ -9,14 +9,47 @@
         <p>したのふぉーむからなんでもいいからじょうほうていきょうしてね</p>
         <textarea id="text"value=""placeholder="ていきょうしてね"></textarea>
 
-        <div class="d1">
-            <div class="d2"></div>
-        <label>
-            <p>ふぁいるをせんたく</p>
-         <input type="file"id="file">
-        </label>
-    </div>
+         <div id="google" class="google">
+            <div id="google_send" class="google_send" onclick="share()">
+                ふぁいるをていきょうする
+            </div>
+         </div>  
         <div class="bt" onclick="send()">ていきょう</div>
+        <script>
+
+            function send(){
+                console.log("Pushed");
+                var text_data = document.getElementById("text").value;
+                if(text_data.length < 1){
+                    alert("文字を入力してください");
+                    return;
+                }else{
+                    var url = "https://script.google.com/macros/s/AKfycbxWm3kUCnTM1NnaQkpokyeiMBAigY7f57TySj3mBGnG1rKEmQCO1etidnwPB2FJ4io/exec";
+                    var data = [{
+                        "text":text_data
+                    }];
+                    var params = {
+                        "method":"post",
+                        "mode":"no-cors",
+                        "Content-Type":"application/json",
+                        "body":JSON.stringify(data)
+                    }
+                    console.log(data)
+                    fetch(url,params);
+                    alert("ていきょうしました")
+                }
+            }
+            function share(){
+                console.log("share");
+                var branch = confirm("外部サイトにアクセスします");
+                if(branch){
+                    console.log("jump")
+                    location.href = "https://drive.google.com/drive/folders/1F9lAdvkujChHClA5KJpByJO76x347Pai?usp=sharing";
+                }else{
+                    console.log("cancel");
+                }
+            }
+        </script>
         <style>
             body{
                  margin: 0;
@@ -35,6 +68,25 @@
                 font-size: 3.5vw;
                 text-align: center;
             }
+            .google{
+                width:fit-content;
+                height:fit-content;
+                margin-left:10vw;
+                padding:0;
+                padding-right:0.5vw;
+                padding-bottom:0.5vw;
+                border:2px solid rgb(249, 182, 59);
+            }
+            .google_send{
+                width:fit-content;
+                padding-left:5vw;
+                padding-right:5vw;
+                padding-top:1vh;
+                padding-bottom:1vh;
+                background-color: rgb(249, 182, 59);
+                color:white;
+                font-weight:600;
+            }
             textarea{
                 width:80vw;
                 height:7.5vh;
@@ -46,38 +98,7 @@
                 font-size: 20px;
                 color:#585858;
             }
-            .d1{
-                position: relative;
-                width:30vw;
-                height:3vh;
-                margin-left:10vw;
-                background-color: #f4b847;
-                text-align:center;
-            }
-            .d1 p{
-                position:absolute;
-                top:0;
-                left:0;
-                width:30vw;
-                height:3vh;
-                line-height:3vh;
-                margin:0;
-                font-size:20px;
-            }
-            .d2{
-                width: 30vw;
-                height:3vh;
-                border:3px solid #f4b847;
-            }
-            .d1:hover{
-                background-color: #ADE0EE;
-            }
-            .d1:hover .d2{
-                background-color: #f4b847;
-            }
-            .d2:hover{
-                background-color: #f4b847;
-            }
+            
             label{
                 width: 30vw;
                 height:3vh;
@@ -95,10 +116,14 @@
                 height:5vh;
                 margin-top: 2.5vh;
                 margin-left:30vw;
-                border:1px solid black;
                 font-size:30px;
+                background-color: #349ebb;
+                border-radius:50px;
                 text-align: center;
                 line-height: 5vh;
+                color:white;
+                font-weight:600;
+                
             }
         </style>
     </body>

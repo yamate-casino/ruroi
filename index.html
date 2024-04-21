@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body onload="get_data1()">
-        <style>
+        <!--style>
         .all{
         display:none;
         opacity:0;
@@ -20,10 +20,10 @@
         opacity:1;
         font-size:5vw;
         }
-        </style>
-        <div class="block">
+        </style-->
+        <!--div class="block">
             <p>ただいまメンテナンス中</p>
-            </div>
+            </div-->
 <div class="all" id="all" onclick="get_data()">
     <img id="imgs"src="r3.png">
     <p class="l1" id="l1d">がめんたっぷしてろーど</p>
@@ -115,6 +115,10 @@
             <div class="list">
                 <h4>るろいニュースサービス開始<span>2024 4/14</span></h4>
                 <p>マインページ右上にベルマークが追加されました。このベルマークが振動しているときは新着のニュースがあります。ぜひクリックしてみてね</p>
+            </div>
+            <div class="list">
+                <h4>じょうほうていきょうサービス開始<span>2024 4/21</span></h4>
+                <p>メインページ上部のじょうほうていきょうボタンをクリックしてページへアクセスしよう</p>
             </div>
         </div>
         
@@ -340,6 +344,7 @@ function get_data1(){
                 document.getElementById("d2").style.display ="block";
                 document.getElementById("d1").style.display ="block";
                 document.getElementById("bar").style.display ="block";
+                
                },0)
             }
             function scroll_out(){
