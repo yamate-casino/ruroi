@@ -266,27 +266,63 @@ height:100vh;
     display: inline-block;
 }
 .news{
+    padding-top:2.5vh;
     font-size:40px;
     color:white;
-    border-bottom:3px solid white;
+background-color:#e2f9ff;
+
+    /*border-bottom:3px solid white;*/
 }
 .news h3{
-    width:97.5vw;
-    padding-left: 2.5vw;
-    padding-bottom: 2.5vh;
-    border-bottom: 3px solid white;
+    width:100vw;
+margin-bottom:5vh;
+    /*border-bottom: 3px solid white;*/
+}
+.news span{
+    padding:5vw;
+    margin:2vw;
+    border-radius:100px;
+    background-color:#ADE0EE;
+    /*color:#3faac7;*/
+    text-align:center;
 }
 .list{
+    position:relative;
     width:90vw;
+    height:20vh;
     margin-left:5vw;
+    color:black;
     border-bottom: 1px solid white;
+    z-index:100;   
 }
+.list .texts{
+    position:absolute;
+    z-index:100;
+}
+.list h4{
+    font-size:40px;
+}
+.list .cl{
+    position:absolute;
+    
+    width:40vw;
+    height:40vw;
+    border-radius:1000px;
+    background-color: #ADE0EE;
+    z-index:10;
+}
+
 .list span{
+    padding:0;
+    background-color: white;
+    color:black;
     font-size:15px;
+    z-index:100;
 }
 
 .list p{
     font-size:25px;
+    z-index:100;
 }
 .newsr{
     position:absolute;

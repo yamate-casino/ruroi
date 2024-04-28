@@ -107,18 +107,28 @@
         </div>
         </div>
         <div class="news">
-            <h3>お知らせ</h3>
+            <h3><span>お</span><span>し</span><span>せ</span><span>ら</span><span>せ</span></h3>
             <div class="list">
+                <div class="cl"></div>
+                <div class="texts">
                 <h4>まいにちるろい機能サービス開始<span>2023 3/12</span></h4>
                 <p>メインページの上部にまいにちるろい機能の登録ページへのボタンを作りました。メールアドレスを登録すると毎日るろいからポエムが送られてくるよ</p>
             </div>
-            <div class="list">
-                <h4>るろいニュースサービス開始<span>2024 4/14</span></h4>
-                <p>マインページ右上にベルマークが追加されました。このベルマークが振動しているときは新着のニュースがあります。ぜひクリックしてみてね</p>
+                
             </div>
             <div class="list">
+                <div class="cl"></div>
+                <div class="texts">
+                <h4>るろいニュースサービス開始<span>2024 4/14</span></h4>
+                <p>マインページ右上にベルマークが追加されました。このベルマークが振動しているときは新着のニュースがあります。ぜひクリックしてみてね</p>
+                </div>
+            </div>
+            <div class="list">
+                <div class="cl"></div>
+                <div class="texts">
                 <h4>じょうほうていきょうサービス開始<span>2024 4/21</span></h4>
                 <p>メインページ上部のじょうほうていきょうボタンをクリックしてページへアクセスしよう</p>
+                </div>
             </div>
         </div>
         
@@ -166,6 +176,7 @@ function get_data1(){
             document.getElementById("today").innerHTML = tp;
         }else{
             console.log("cookie<todays>Error");
+                confirm('CookieError');
         }
         
       stop();
