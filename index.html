@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body onload="get_data1()">
-        <style>
+        <!--style>
         .all{
         display:none;
         opacity:0;
@@ -33,7 +33,7 @@
         </style>
         <div class="block">
             <p>ただいまメンテナンス中</p>
-            </div>
+            </div-->
             
 <div class="all" id="all" onclick="get_data()">
     <img id="imgs"src="r3.png">
@@ -101,7 +101,14 @@
                 </div>
                 
             </div>
-            <div id="bar" class="bar"></div>
+            <div id="bar" class="bar">
+                <p class="swip" id="swip">スワイプして閉じる</p>
+                <div class="sw_block">
+                <p class="swipe" id="swip2">＞</p>
+                <p class="swipe" id="swip3">＞</p>
+                <p class="swipe" id="swip4">＞</p>
+            </div>
+            </div>
             <h3>ろいじてん</h3>
             <div class="dic" onclick="om2()">
                 
@@ -177,25 +184,53 @@ if(0 < endx-startx){
   console.log("opsite")
 }
 }
+function data_send(){
+    console.log("Ip Address Getting");
+    fetch('https://ipinfo.io?callback')
+    .then(res => res.json())
+    .then(json => next(json.ip))
+}
+function next(ipaddress){
+ var url = "https://script.google.com/macros/s/AKfycbwQz_gCyGLVv6qBxPo8Zzti56XeqIvxLIMnO_lESWz1adJL24u5uSRWve3G9AAopkE/exec";
+ var data = [{
+    "branch":"access",
+    "ip":ipaddress
+ }]
+ var params = {
+    "method":"post",
+    "mode":"no-cors",
+    "Content-Type":"application/json",
+    "body":JSON.stringify(data)
+ }
+ console.log(params);
+ fetch(url,params);
+}
 function get_data1(){
+    data_send();
     data = document.cookie;
+    console.log(data);
     var c1 = data.indexOf("status=");
     if(c1 !=-1){
         var c2 = data.indexOf("todaysp=");
         if(c2 !=-1){
             var c3 = data.indexOf("¥",c2);
-            c2 = pserInt(c2)+8;
+            c2 = parseInt(c2)+8;
+            console.log("c2:"+c2);
             var tp = data.substring(c2,c3);
+            tp = decodeURI(tp);
+             console.log("tp:"+tp);
             document.getElementById("today").innerHTML = tp;
+            console.log("Skip Success")
         }else{
             console.log("cookie<todays>Error");
                 confirm('CookieError');
         }
         
       stop();
-        
+      get_data();
     }else{
         console.log("Cookie<None Datas>")
+            get_data();
     }
 }
             function get_data(){
@@ -219,6 +254,7 @@ function get_data1(){
         console.log(datas);
       document.cookie = datas;
       document.cookie = "status=ok*; Max-Age=120"
+      console.log("Cookie Wrote Status");
       get_data2();
     })
             }
@@ -238,9 +274,11 @@ function get_data1(){
                     console.log("Got Number");
                     number = resJson[0];
                     todays_p = todays[number];
-                    todays_pc = "todaysp="+todays_p+"¥";
+                    todays_p = encodeURI(todays_p);
+                    todays_pc = "todaysp="+todays_p+"¥; max-age=120";
                     document.cookie = todays_pc;
-                  document.getElementById("today").innerHTML = todays[number]
+                  document.getElementById("today").innerHTML = todays[number];
+                  console.log(todays_pc);
                   //ニュースあれば
                   bell();
 
@@ -362,14 +400,69 @@ function get_data1(){
                     duration:500,
                     easing:"linear"
                 })
+                $("#swip").animate({
+                    "opacity":0
+                },0)
+                $("#swip").animate({
+                    "opacity":1
+                },{
+                    duration:1000,
+                    easing:"linear"
+                })
+
                setTimeout(()=>{
                 document.getElementById("cont").style.display ="block";
                 document.getElementById("d3").style.display ="block";
                 document.getElementById("d2").style.display ="block";
                 document.getElementById("d1").style.display ="block";
                 document.getElementById("bar").style.display ="block";
-                
+                document.getElementById("swip").style.display ="block";
+                document.getElementById("swip2").style.display ="block";
+                document.getElementById("swip3").style.display ="block";
+                document.getElementById("swip4").style.display ="block";
+                setTimeout(()=>{
+                    swip_ani();
+                },2000);
                },0)
+            }
+            function swip_ani(){
+                $("#swip2").animate({
+                'left':0,
+                'opacity':0
+             },0)
+             $("#swip3").animate({
+                'left':0,
+                'opacity':0
+             },0)
+             $("#swip4").animate({
+                'left':0,
+                'opacity':0
+             },0)
+             $("#swip").animate({
+                'opacity':0
+             },1000)
+             $("#swip2").animate({
+                'opacity':1
+             },1000)
+             $("#swip2").animate({
+                'left':'90vw',
+                'opacity':0
+             },1500)
+             $("#swip3").animate({
+                'opacity':1
+             },1200)
+             $("#swip3").animate({
+                'left':'90vw',
+                'opacity':0
+             },1700)
+             $("#swip4").animate({
+                'opacity':1
+             },1400)
+             $("#swip4").animate({
+                'left':'90vw',
+                'opacity':0
+             },1900)
+             
             }
             function scroll_out(){
                 $("#cont").animate({

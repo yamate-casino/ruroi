@@ -434,3 +434,28 @@ margin-bottom:5vh;
     z-index: 300;
    display: none;
 }
+.swip{
+    position: absolute;
+    bottom:5.5vh;
+    display: none;
+    opacity: 0;
+    color:#6e6e73;
+    font-size:30px;
+}
+.sw_block p{
+    position: absolute;
+    bottom:5.5vh;
+    display: none;
+    opacity: 0;
+    color:#6e6e73;
+ display: inline-block;
+ font-size:30px;
+}
+/*.all{
+    display: none;
+   opacity: 0;
+}
+.all1{
+    display: block;
+    opacity: 1;
+}*/
