@@ -34,7 +34,19 @@
         <div class="block">
             <p>ただいまメンテナンス中</p>
             </div-->
-            
+<div class="alert" id="alert">
+    <div class="p" id="p">
+        <h1 class="h1" id="h1">
+         学校で見ている諸君
+        </h1>
+        <p class="p2" id="p2">
+            あばばばっばばばばばっｂｓばっばばｄｆぶれｂぎうｒくぇｂぎうれぎえうｒｂぎえｒ
+        </p>
+        <div class="c" id="c">
+            閉じる
+        </div>
+    </div>
+</div>
 <div class="all" id="all" onclick="get_data()">
     <img id="imgs"src="r3.png">
     <p class="l1" id="l1d">がめんたっぷしてろーど</p>
@@ -305,8 +317,8 @@ function get_data1(){
                   document.getElementById("today").innerHTML = todays[number];
                   console.log(todays_pc);
                   //ニュースあれば
+                  check_alert();
                   bell();
-
                   stop();
                 })
                 .catch(error =>{
@@ -513,6 +525,42 @@ function get_data1(){
             function bt3(){
                 location.href="news3.html";
             }
+
+            function check_alert(){
+var url = "https://script.google.com/macros/s/AKfycbwx2_Sttue96jHbLrcBxHHXqQ0pqDHtclNMYEmFITycbjDlcRxAHim3X6Q-UhXEWrA/exec";
+fetch(url,{
+    "method":"GET",
+    "mode":'cors',
+})
+.then(response =>{
+    if(response.ok){
+        return response.json()
+    }
+})
+.then(json =>{
+    console.log(json);
+    var theme = json[0];
+    var contents = json[1];
+    console.log(theme+","+contents)
+    if(theme.length == 0 && contents.length == 0){
+        return;
+    }else{
+        document.getElementById("alert").style.display = "block";
+        document.getElementById("alert").style.opacity = "1";
+        document.getElementById("h1").innerHTML = theme;
+        document.getElementById("p2").innerHTML = contents;
+
+    }
+
+})
+.catch(error =>{
+    alert(error);
+})
+            }
+document.getElementById("c").addEventListener("click",()=>{
+    document.getElementById("alert").style.display = "none";
+    document.getElementById("alert").style.opacity = "0";
+})
         </script>
     </body>
 </html>
