@@ -547,6 +547,8 @@ fetch(url,{
     }else{
         document.getElementById("alert").style.display = "block";
         document.getElementById("alert").style.opacity = "1";
+        document.getElementById("all1").style.display = "none";
+        document.getElementById("all1").style.opacity = "0"
         document.getElementById("h1").innerHTML = theme;
         document.getElementById("p2").innerHTML = contents;
 
@@ -560,6 +562,8 @@ fetch(url,{
 document.getElementById("c").addEventListener("click",()=>{
     document.getElementById("alert").style.display = "none";
     document.getElementById("alert").style.opacity = "0";
+            document.getElementById("all1").style.display = "block";
+        document.getElementById("all1").style.opacity = "1"
 })
         </script>
     </body>
