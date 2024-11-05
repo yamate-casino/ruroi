@@ -509,3 +509,11 @@ opacity: 0;
     border:1px solid black;
     border-radius:10vw;
 }
+.blockk{
+    display: block;
+    opacity: 1;
+}
+.blockkk{
+    display: block;
+    opacity: 1;
+}

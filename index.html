@@ -15,7 +15,9 @@
         <link rel="apple-touch-icon" href="r3.png" />
         <link rel="stylesheet" href="index.css">
     </head>
-    <body onload="get_data1()">
+    <body onload="get_data11()">
+
+<div class="bclokk" id="blockk">
         <style>
         .all{
         display:none;
@@ -34,13 +36,16 @@
         <div class="block">
             <p>ただいまメンテナンス中</p>
             </div>
-<!--div class="alert" id="alert">
+</div>
+
+<div class="blockkk" id="blockkk">
+<div class="alert" id="alert">
     <div class="p" id="p">
         <h1 class="h1" id="h1">
-         学校で見ている諸君
+ 
         </h1>
         <p class="p2" id="p2">
-            あばばばっばばばばばっｂｓばっばばｄｆぶれｂぎうｒくぇｂぎうれぎえうｒｂぎえｒ
+ 
         </p>
         <div class="c" id="c">
             閉じる
@@ -159,8 +164,8 @@
         <h3 class="qrh">きょうゆうできるよ</h3>
         <img class="qr"src="qr.png">
         
-    </div-->
-    
+    </div>
+</div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script>
@@ -171,6 +176,33 @@
 document.getElementById("bar").addEventListener('touchmove',logswipe);
 document.getElementById("bar").addEventListener('touchstart',logswipestart);
 document.getElementById("bar").addEventListener('touchend',logswipeend);
+function get_data11(){
+    var url ="https://script.google.com/macros/s/AKfycbwQz_gCyGLVv6qBxPo8Zzti56XeqIvxLIMnO_lESWz1adJL24u5uSRWve3G9AAopkE/exec";
+    fetch(url,{
+        "method":"get",
+        "mode":"cors",
+    })
+    .then(response =>{
+       if(response.ok){
+        response.json();
+       }
+    })
+    .then(resjson =>{
+        var data = resjson[0];
+        if(data == "run"){
+            document.getElementById("blockk").style.display = " none";
+            document.getElementById("blockk").style.opacity = " 0";
+            document.getElementById("blockkk").style.display = " block";
+            document.getElementById("blockkk").style.opacity = " 1";
+            get_data1();
+        }else{
+            document.getElementById("blockk").style.display = " block";
+            document.getElementById("blockk").style.opacity = " 1";
+            document.getElementById("blockkk").style.display = " none";
+            document.getElementById("blockkk").style.opacity = " 0";
+        }
+    })
+}
             function logswipestart(event){
   event.preventDefault();
   startx = event.touches[0].pageX;
