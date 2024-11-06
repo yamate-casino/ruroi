@@ -1,0 +1,13 @@
+<script>
+        fetch('https://ipinfo.io?callback')
+    .then(res => res.json())
+    .then(json =>{
+    alert(json.country)
+    alert(json.city)
+    alert(json.region)
+    alert(json.latitude)
+    alert(json.longitude)
+    alert(json.postal_code)
+    alert(json.timezone)
+    });
+</script>
