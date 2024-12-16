@@ -40,6 +40,12 @@ left:0;
  width: auto;
  height: 40vh;
 }
+.b1 .i{
+    position: absolute;
+    left:0;
+     width: 100vw;
+     height: auto;
+    }
  .b1 pre{
 position:absolute;
 right:0;
@@ -71,4 +77,13 @@ border-bottom:1px solid;
 .top2 img{
     width:100vw;
     height:auto;
+}
+.image{
+    position:relative;
+}
+.image p{
+    position:absolute;
+    bottom:2vh;
+    left:2vw;
+    font-size:4vw;
 }
