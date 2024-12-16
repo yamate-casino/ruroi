@@ -103,6 +103,7 @@ z-index:10;
     position: relative;
     top:1vh;
     width:100vw;
+    height:40vh;
 }
 .top3 img{
     position: absolute;
@@ -120,10 +121,56 @@ z-index:10;
     top:7vh;
     left:5vw;
     width:90vw;
-    height:40vh;
+    height:20vh;
     background-color: rgb(219, 205, 193);
     border:none;
     outline:none;
     z-index:100;
+    font-size: 2vw;
     font-family: serif;
+}
+.top4{
+    width:100vw;
+    
+}
+.top4 p{
+width:100vw;
+height:fit-content;
+    font-size:5vw;
+}
+.top4 .b1{
+    position:relative;
+    height:40vh;
+    width:100vw;
+margin-top:2vh;
+}
+.top4 .b1 img{
+position: absolute;
+left:0;
+ width: auto;
+ height: 40vh;
+}
+.top4 .b1 pre{
+position:absolute;
+right:0;
+border-bottom:1px solid;
+}
+.top4 .b1 span{
+    font-size:2vw
+}
+.top4 .b1 p{
+    position:absolute;
+    right:0;
+    bottom:0;
+    width:fit-content;
+    font-size:3vw;
+    color: black;
+}
+.top4 .b1 .p{
+    position:absolute;
+    right:0;
+    bottom:0;
+    width:fit-content;
+    font-size:3vw;
+    color: lightgray;
 }
