@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(219, 205, 193)
+}
+
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+
+pre {
+    font-family: serif;
+    font-size: 5vw;
+}
+p{
+    margin:0;
+    padding: 0;
+    font-family: serif;
+}
+div{
+    margin: 0;
+    padding:0;
+}
+.top1 {
+    position: relative;
+    font-family: serif;
+    font-size: 5vw;
+    height:fit-content;
+    margin: 0;
+    padding: 0;
+}
+.top1 .center img{
+    width:100vw;
+    height:auto;
+}
+.top1 .dark{
+    position: absolute;
+    top: 0vh;
+width:100vw;
+height:62vh;
+
+background-color: black;
+opacity: 0.4;
+z-index:10;
+}
+.top1 .right {
+    position: absolute;
+    top: 10vh;
+    left: 15vw;
+    font-size: 10vw;
+    color:white;
+    z-index:300;
+}
+.top1 .left {
+    position: absolute;
+    top: 52.5vh;
+    left:32.5vw;
+    font-size: 3vw;
+    color:white;
+    z-index:200;
+}
+.top2{
+    width:92vw;   
+    margin-left:4vw;
+    padding:0;
+    
+    z-index:100;
+}
+.top2 div{
+ width:30vw;   
+ text-align: center;
+    display: inline-block;
+    margin:0;
+    padding:0;
+    padding-top:0.6vh;
+    padding-bottom:1vh;
+    z-index:100;
+    background-color: rgb(219, 205, 193);
+
+}
+.top2 .center{
+    border-right:1px solid black;
+    border-left:1px solid black;
+}
+.top2 .right{
+    border-right:1px solid black;
+}
+.top2 .left{
+    border-left:1px solid black;
+}
+.top2 div pre{
+    font-size:3vw;
+    margin:0;
+    padding:0;
+    z-index:100;
+
+}
+
+.top2 div span{
+    font-size:2vw;
+    z-index:100;
+
+}
+.top3{
+    position: relative;
+    top:1vh;
+    width:100vw;
+}
+.top3 img{
+    position: absolute;
+    width:100vw;
+    height:auto;
+    z-index:500;
+}
+.top3 p{
+    font-size: 5vw;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+.top3 .message textarea{
+    position: absolute;
+    top:7vh;
+    left:5vw;
+    width:90vw;
+    height:40vh;
+    background-color: rgb(219, 205, 193);
+    border:none;
+    outline:none;
+    z-index:100;
+    font-family: serif;
+}
