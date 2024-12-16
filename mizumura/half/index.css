@@ -1,7 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(219, 205, 193)
+    background-color: rgb(219, 205, 193);
+    opacity:0;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
@@ -35,7 +36,7 @@ div{
     position: absolute;
     top: 0vh;
 width:100vw;
-height:62vh;
+height:0;
 
 background-color: black;
 opacity: 0.4;
@@ -118,7 +119,7 @@ z-index:10;
 }
 .top3 .message textarea{
     position: absolute;
-    top:7vh;
+    top:9vh;
     left:5vw;
     width:90vw;
     height:20vh;
@@ -126,12 +127,12 @@ z-index:10;
     border:none;
     outline:none;
     z-index:100;
-    font-size: 2vw;
+    font-size: 3vw;
     font-family: serif;
 }
 .top4{
     width:100vw;
-    
+    margin-top:1vh;
 }
 .top4 p{
 width:100vw;

@@ -5,12 +5,12 @@
         <title>みずむら写真館</title>
         <link rel="stylesheet" href="index.css">
     </head>
-    <body>
+    <body onload="start()" id="body">
         <div class="top1" id="top1">
 
             <div class="center" id="center">
-                <div class="dark"></div>          
-             <img src="IMG_1742.JPG">
+                <div class="dark" id="dark"></div>          
+             <img id="pic" src="IMG_1742.JPG">
             </div>
             <div class="right" id="right">
                 <img src="happy2.png">
@@ -65,7 +65,7 @@
 <span>First Day</span>
 出会いの日    
 </pre>
-<p>もっと見る</p>
+<p onclick="jump1()">もっと見る</p>
             </div>
             <div class="b1" id="b1">
                 <img src="IMG_9182.JPG">
@@ -73,7 +73,7 @@
 <span>School Days</span>
 学校    
 </pre>
-<p class="p">もっと見る</p>
+<p class="p" onclick="jump2()">もっと見る</p>
             </div>
             <div class="b1" id="b1">
                 <img src="IMG_1742.JPG">
@@ -81,7 +81,7 @@
 <span>Date</span>
 二人の時間    
 </pre>
-<p>もっと見る</p>
+<p onclick="jump3()">もっと見る</p>
             </div>
             <div class="b1" id="b1">
                 <img src="Snapseed.JPG">
@@ -89,9 +89,10 @@
 <span>Now</span>
 今    
 </pre>
-<p>もっと見る</p>
+<p onclick="jump4()">もっと見る</p>
             </div>
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="index.js"></script>
     </body>
 </html>
