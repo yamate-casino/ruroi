@@ -151,6 +151,10 @@ left:0;
  width: auto;
  height: 40vh;
 }
+.top4 .b1 .i{
+    width:100vw;
+    height:auto;
+    }
 .top4 .b1 pre{
 position:absolute;
 right:0;
