@@ -45,7 +45,7 @@ z-index:10;
 .top1 .right {
     position: absolute;
     top: 10vh;
-    left: 10vw;
+    left: 12.5vw;
     font-size: 10vw;
     color:white;
     z-index:300;
